@@ -1,4 +1,4 @@
- // This is your Prisma schema file,
+// This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
@@ -12,24 +12,26 @@ datasource db {
 
 model Producto {
   id Int @id @default(autoincrement())
-  nombre String 
+  nombre String
   precio Float
   imagen String
-  categoria Categoria @relation( fields: [categoriaId], references: [id] )
+  categoria Categoria @relation(fields: [categoriaId], references: [id])
   categoriaId Int
 }
 
-model Categoria {
-   id Int @id @default(autoincrement())
-   nombre String
-   icono String
-   productos Producto[]
-}
 
-model Orden {
+model Categoria{
   id Int @id @default(autoincrement())
   nombre String
-  fecha String
+  icono String
+  productos Producto[]
+}
+
+model Orden{
+  id Int @id @default(autoincrement())
+  nombre String
+  fecha String   
   total Float
   pedido Json
+
 }

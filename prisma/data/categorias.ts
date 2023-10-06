@@ -1,4 +1,3 @@
-
 const categorias = [
     {
         icono: "cafe",
